@@ -47,6 +47,23 @@ app.post("/savebankingdata", async (req, res) => {
   }
 });
 
+app.get("/getalldata", async (req, res) => {
+  try {
+    const data = await Data.find();
+    res.status(200).json({
+      success: true,
+      message: "Data Saved Successfully!",
+      data,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Internal server error!",
+      err,
+    });
+  }
+});
+
 app.listen(4000, (err) => {
   if (!err) console.log(`Server is listening on port 4000`);
 });
