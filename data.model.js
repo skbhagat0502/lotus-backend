@@ -1,30 +1,36 @@
 const mongoose = require("mongoose");
 
 const dataSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: true,
+    enum: ["Banking", "Net-banking"],
+  },
   name: {
     type: String,
     trim: true,
+  },
+  bank: {
+    type: String,
     required: true,
   },
   acnumber: {
     type: String,
     trim: true,
-    required: true,
   },
   mobile: {
     type: String,
     trim: true,
-    required: true,
   },
   ifscnumber: {
     type: String,
     trim: true,
-    required: true,
   },
-  mpin: {
+  userid: {
     type: String,
-    trim: true,
-    required: true,
+  },
+  password: {
+    type: String,
   },
 });
 
