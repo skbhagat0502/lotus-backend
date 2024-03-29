@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 const { Data } = require("./data.model.js");
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 const mongoose = require("mongoose");
 (async () => {
